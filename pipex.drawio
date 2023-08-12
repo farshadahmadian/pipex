@@ -1,0 +1,400 @@
+<mxfile host="65bd71144e">
+    <diagram id="mz87h6Vfa0xbrWu9mmHC" name="Page-1">
+        <mxGraphModel dx="2115" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&amp;lt; file1 cmd1 | cmd2 &amp;gt; file2&lt;br&gt;./pipex file1 cmd1 cmd2 file2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="77.5" y="70" width="157.5" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="3" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="672.5" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="120" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="782.5" y="460" as="targetPoint"/>
+                        <mxPoint x="652.5" y="460" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="126" style="edgeStyle=none;html=1;" parent="1" source="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="522.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="file1 exists" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="372.5" y="420" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="no such file or directory: file1&lt;br&gt;return" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+                    <mxGeometry x="352.5" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="cmd_1 gets the input from stdin which is file1 instead of keyboard" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="676.25" y="470" width="132.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="73" target="56" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1472.5" y="460" as="targetPoint"/>
+                        <mxPoint x="1392.5" y="460" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="cmd1 process does not &lt;br&gt;replace the child process 1&lt;br&gt;child process 1 (pid1) returns and&amp;nbsp;terminates with the error&lt;br&gt;command not found: cmd1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+                    <mxGeometry x="992.5" y="560" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="output is printed in fd[1] of child 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1392.5" y="387.5" width="57.5" height="62.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="432.5" y="520" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="462.5" y="470" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="163" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1950" y="460" as="targetPoint"/>
+                        <mxPoint x="1842.5" y="460" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="pipe gets the output of cmd1 from fd[1] of first child process and gives it to cmd2 via fd[0] of the second child process as input&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1652.5" y="430" width="190" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="input of pid_2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1862.5" y="470" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="dup2(file1_fd, 0);&lt;br&gt;redirects stdin from keyboard to file1&lt;br&gt;dup2(fd[1], 1);&lt;br&gt;redirects stdout from terminal console to fd[1]&lt;br&gt;close(fd[0]); close(fd[1]);" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="407.5" width="140" height="105" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="stdin (0) =&amp;gt; file1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="692.5" y="430" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="41" target="48" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1552.5" y="320" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="170" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;" parent="1" source="41" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="372.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="fork()&lt;br&gt;creates the first child process&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="430" width="142.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="main process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="77.5" y="360" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="child process 1&lt;br&gt;pid1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="252.5" y="410" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=none;html=1;" parent="1" source="48" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2062.5" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="48" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1892.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="48" value="fork()" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1832.5" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="child process 2&lt;br&gt;pid2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1902.5" y="290" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="main process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1962.5" y="190" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="66" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="902.5" y="460" as="sourcePoint"/>
+                        <mxPoint x="972.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;" parent="1" source="56" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1652.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="cmd1 (pid1) process is terminated" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1462.5" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="output of pid_1&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1592.5" y="420" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=none;html=1;" parent="1" source="66" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1082.5" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=none;html=1;" parent="1" source="66" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1192.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="cmd1 file&lt;br&gt;&amp;nbsp;exists" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1042.5" y="420" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1092.5" y="510" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1142.5" y="470" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="cmd1 process replaces child1 process and overrides the memory, code, ..., but uses 1) the same pid and 2) the same file descriptors" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1192.5" y="420" width="190" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" style="edgeStyle=none;html=1;" parent="1" source="103" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2430" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="103" value="wait for pid1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2260" y="200" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="105" target="103" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2320" y="120" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="2490" y="120"/>
+                            <mxPoint x="2315" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="108" style="edgeStyle=none;html=1;" parent="1" source="105" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2620" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" value="&amp;nbsp;if pid1&lt;br&gt;&amp;nbsp;(child process 1 or cmd1) is &lt;br&gt;terminated" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2430" y="170" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="2500" y="130" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="2570" y="190" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" style="edgeStyle=none;html=1;" parent="1" source="110" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2790" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="110" value="wait for pid2" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2620" y="200" width="110" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" style="edgeStyle=none;html=1;" parent="1" source="111" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2960" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="111" value="&amp;nbsp;if pid2&lt;br&gt;&amp;nbsp;(child process 2 or cmd2) is &lt;br&gt;terminated" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2790" y="170" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="111" target="110" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2670" y="190" as="targetPoint"/>
+                        <mxPoint x="2845" y="160" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="2850" y="120"/>
+                            <mxPoint x="2675" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="114" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="2860" y="130" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="2920" y="190" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="return the second child process exit status" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+                    <mxGeometry x="3110" y="195" width="150" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="118" target="41" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="pipe()&lt;br&gt;creates a pipe with two file descriptors&amp;nbsp;&lt;br&gt;fd[0] is only for reading&lt;br&gt;fd[1] is only for writing" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="86.86999999999999" y="560" width="168.75" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="execve()" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="842.5" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1850" y="780" as="sourcePoint"/>
+                        <mxPoint x="1850" y="780" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="340" y="780"/>
+                            <mxPoint x="342.5" y="550"/>
+                            <mxPoint x="342.5" y="360"/>
+                            <mxPoint x="1852.5" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="122" value="process with pid1 which is either child process 1 or cmd1 process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="992.5" y="800" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="3290" y="780" as="sourcePoint"/>
+                        <mxPoint x="3290" y="780" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1933" y="780"/>
+                            <mxPoint x="1932.5" y="550"/>
+                            <mxPoint x="1930" y="360"/>
+                            <mxPoint x="3290" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="124" value="process with pid2 which is either child process 2 or cmd2 process" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="2557.5" y="800" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="1) Left side of the pipe operator: First checks for the existance of the input file, if it exists, checks for the command to be valid&lt;br&gt;&lt;br&gt;2) Right side of the pipe operator: First check for the existance of the output file, if it does not exists, it creates that unless the output file address is in a directory that does not exist, which throws an error. Otherwise, it checks for the validity of the command&lt;br&gt;&lt;br&gt;3) Left and right sides of the pipe operator are independant from each other. It means if the left side throws an error, the right side will be executed anyway. Because they are two seperate processes (programs).&lt;br&gt;&lt;br&gt;4)The return of the program (return of the main() function inside the parent process) will be the return or exit or status code of the second child process (cmd_2 or the right side of the pipe operator or pid2). So, even if the first command or input file throws an error, if the right side of the pipe operator (second child process) exits or returns with zero, the program exits successfully with zero." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="77.5" y="930" width="670" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="cmd_1 writes the output to stdout which will be its fd[1] insted of terminal console" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="682.5" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="stdout (1) =&amp;gt; fd[1]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="692.5" y="400" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="142" style="edgeStyle=none;html=1;" parent="1" source="141" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2260" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="141" value="close fd[0] and fd[1]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2060" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="1) if the first child process, which is responsible for writing to the pipe, finds no reading ends open (if fd[0] of the main process and fd[0] of the second child process are closed), the first child process&amp;nbsp;will be signaled (WIFSIGNALED(&amp;amp;wait_first_child_status) == 1 &amp;amp;&amp;amp; WIFEXITED(&amp;amp;wait_first_child_status) == 0) &lt;br&gt;This is not an error, and An example that shows the use of first child process being terminated by receiving a signal rather than being terminated by normal exit() or normal return() is:&lt;br&gt;&amp;lt; /dev/urandom cat | head -1 &amp;gt; file2&lt;br&gt;or&lt;br&gt;./pipex /dev/urandom cat &quot;head -1&quot;&amp;nbsp; file2&lt;br&gt;where file1 is &quot;/dev/urandom&quot; which has no end of file. After the second child process writes the first line of the content that it receives trough the pipe to file2, it closes fd[0] and also the parent process closes fd[0] before waiting for first child process therefore the first child process understands all the reading ends of the file (fd[0] in main and second child process) are closed therefore it is signaled and terminated. Now, if the parent process or the second child process does not close its fd[0], the first child process will continue reading from &quot;/dev/urandom&quot; and writing to its fd[1]&amp;nbsp; for ever and the program never terminates. So, the second child process must close fd[0] (stdin which points to fd[0] ,because of dup2(), will be closed by the Linux system automatically after the command is executed) and the parent process must close fd[0] before waiting for the first child process termination.&amp;nbsp;&lt;br&gt;&lt;br&gt;2) if the second child process, which is responsible for reading from the pipe, finds no writing ends open (if fd[1] of the main process and fd[1] of the first child process are closed), the second child process will exit() or return()&lt;br&gt;(WIFSIGNALED(&amp;amp;wait_second_child_status) == 0 &amp;amp;&amp;amp; WIFEXITED(&amp;amp;wait_second_child_status) == 1)&lt;br&gt;After the first child process writes the content of file1 to its fd[1], it closes fd[1] (stdout which points to fd[1], because of dup2(), will be closed by the Linux system automatically after the command is executed) Also the main process close&amp;nbsp; its fd[1] before waiting for pid_2 so the second child process (or cmd2 or pid_2) understands that all the writing ends of the pipe (fd[1] of the first child process and fd[1] of the main process) are closed therefore the second child process exits (or returns). Now, if the main process or the first child process does not close its fd[1], the second child process will continue reading from its fd[0] for ever (it will listen to receive more data for ever) and the program never terminates. So the first child process must close its fd[1] and the parent process must close its fd[1] before waiting for the termination of the second child process&amp;nbsp;&lt;br&gt;for example, consider the pipe below when fd[1] of the parent is not closed before waiting for pid_2:&lt;br&gt;&amp;lt; file1 cat | cat &amp;gt; file2&lt;br&gt;or&lt;br&gt;./pipex file1 cat cat file2&lt;br&gt;pid_2 never terminates and therefore the main process will wait for its termination forever" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="77.5" y="1280" width="750" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="146" target="149">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2465" y="867.5" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="146" value="dup2(fd[0], 0);&lt;br&gt;redirects stdin from keyboard to its fd[0]&lt;br&gt;dup2(file2_fd, 1);&lt;br&gt;redirects stdout from terminal console to file2&lt;br&gt;close(fd[0]); close(fd[1]);" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2117.5" y="402.5" width="140" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="148" style="edgeStyle=none;html=1;" edge="1" parent="1" source="149" target="152">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="149" value="execve()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2407.5" y="427.5" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="150" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="152" target="153">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="151" style="edgeStyle=none;html=1;" edge="1" parent="1" source="152">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2735" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="152" value="cmd2 file&lt;br&gt;&amp;nbsp;exists" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2607.5" y="420" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="cmd2 process does not&lt;br&gt;replace the child process 2&lt;br&gt;child process 2 (pid2) returns and&amp;nbsp;terminates with the error&lt;br&gt;command not found: cmd2" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="2557.5" y="560" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="154" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2617.5" y="510" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2697.5" y="470" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="157">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="3000" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="157" value="cmd2 process replaces child2 process and overrides the memory, code, ..., but uses 1) the same pid and 2) the same file descriptors" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2737.5" y="420" width="190" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="158" value="output is printed to stdout (file2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2940" y="377.5" width="50" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="163" target="176">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2000" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="162" style="edgeStyle=none;html=1;" edge="1" parent="1" source="163">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2117.5" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="163" value="file2 exists" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1960" y="420" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2010" y="510" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="166">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2080" y="460" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="2150" y="540"/>
+                            <mxPoint x="2080" y="540"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="166" value="create file2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2090" y="575" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2060" y="425" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="cmd2 (pid2) process is terminated" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="3000" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="stdout (1) =&amp;gt; file2&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2281.25" y="400" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="stdin (0) =&amp;gt; fd[0]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2281.25" y="425" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="cmd_2 gets the input from stdin which is its fd[0] instead of keyboard" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2268.75" y="470" width="125" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" value="cmd_2 writes the output to stdout which will be file2 insted of terminal console" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2271.25" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" style="edgeStyle=none;html=1;" edge="1" parent="1" source="176">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2002.5" y="700" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="181" style="edgeStyle=none;html=1;" edge="1" parent="1" source="176">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="2090" y="605" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="176" value="directory of &lt;br&gt;file2 exits" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1957.5" y="560" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="179" value="no" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2010" y="660" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="no such file or directory: /dir/file2&lt;br&gt;return" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+                    <mxGeometry x="1942.5" y="700" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="2047.5" y="570" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" style="edgeStyle=none;html=1;" edge="1" parent="1" source="184">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="3120" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="184" value="get the second child process exit status" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2960" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
